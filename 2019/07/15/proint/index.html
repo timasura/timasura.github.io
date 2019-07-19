@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>proint | PageOne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注解（Annotation）元注解 @Target  @Target说明了Annotation所修饰的对象范围：Annotation可被用于 packages、types（类、接口、枚举、Annotation类型）、类型成员（方法、构造方法、成员变量、枚举值）、方法参数和本地变量（如循环变量、catch参数）。在Annotation类型的声明中使用了target可更加明晰其修饰的目标。 作用：用于">
+<meta name="keywords" content="Java Open Book">
+<meta property="og:type" content="article">
+<meta property="og:title" content="proint">
+<meta property="og:url" content="https://timasura.github.io/2019/07/15/proint/index.html">
+<meta property="og:site_name" content="PageOne">
+<meta property="og:description" content="注解（Annotation）元注解 @Target  @Target说明了Annotation所修饰的对象范围：Annotation可被用于 packages、types（类、接口、枚举、Annotation类型）、类型成员（方法、构造方法、成员变量、枚举值）、方法参数和本地变量（如循环变量、catch参数）。在Annotation类型的声明中使用了target可更加明晰其修饰的目标。 作用：用于">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-18T07:36:12.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="proint">
+<meta name="twitter:description" content="注解（Annotation）元注解 @Target  @Target说明了Annotation所修饰的对象范围：Annotation可被用于 packages、types（类、接口、枚举、Annotation类型）、类型成员（方法、构造方法、成员变量、枚举值）、方法参数和本地变量（如循环变量、catch参数）。在Annotation类型的声明中使用了target可更加明晰其修饰的目标。 作用：用于">
+  
+    <link rel="alternate" href="/atom.xml" title="PageOne" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">PageOne</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://timasura.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-proint" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/proint/" class="article-date">
+  <time datetime="2019-07-15T02:01:28.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      proint
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="注解（Annotation）"><a href="#注解（Annotation）" class="headerlink" title="注解（Annotation）"></a>注解（Annotation）</h2><h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><ul>
+<li><p>@Target</p>
+<ul>
+<li><p>@Target说明了Annotation所修饰的对象范围：Annotation可被用于 packages、types（类、接口、枚举、Annotation类型）、类型成员（方法、构造方法、成员变量、枚举值）、方法参数和本地变量（如循环变量、catch参数）。在Annotation类型的声明中使用了target可更加明晰其修饰的目标。</p>
+<p><strong>作用：用于描述注解的使用范围（即：被描述的注解可以用在什么地方）</strong></p>
+<p><strong>取值(ElementType)有：</strong></p>
+<p>​    1.CONSTRUCTOR:用于描述构造器</p>
+<p>​    2.FIELD:用于描述域<br>​    3.LOCAL_VARIABLE:用于描述局部变量<br>​    4.METHOD:用于描述方法<br>​    5.PACKAGE:用于描述包<br>​    6.PARAMETER:用于描述参数<br>​    7.TYPE:用于描述类、接口(包括注解类型) 或enum声明</p>
+</li>
+</ul>
+</li>
+<li><p>@Retention</p>
+<ul>
+<li><p><strong>@Retention</strong>定义了该Annotation被保留的时间长短：某些Annotation仅出现在源代码中，而被编译器丢弃；而另一些却被编译在class文件中；编译在class文件中的Annotation可能会被虚拟机忽略，而另一些在class被装载时将被读取（请注意并不影响class的执行，因为Annotation与class在使用上是被分离的）。使用这个meta-Annotation可以对 Annotation的“生命周期”限制。</p>
+<p><strong>作用：表示需要在什么级别保存该注释信息，用于描述注解的生命周期（即：被描述的注解在什么范围内有效）</strong></p>
+<p><strong>取值（RetentionPoicy）有：</strong></p>
+<p>　　1.SOURCE:在源文件中有效（即源文件保留）<br>　　2.CLASS:在class文件中有效（即class保留）<br>　　3.RUNTIME:在运行时有效（即运行时保留）</p>
+</li>
+</ul>
+</li>
+<li><p>@Documented</p>
+<ul>
+<li><strong>@Documented</strong> 标记注解 ：文档化注解生成公共API</li>
+</ul>
+</li>
+<li><p>@Inherited</p>
+<ul>
+<li><strong>@Inherited</strong> 标记注解：如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>自定义注解</strong></p>
+<ul>
+<li><p>使用@interface自定义注解时，自动继承了java.lang.annotation.Annotation接口。</p>
+</li>
+<li><p><strong>注解参数的可支持数据类型：</strong></p>
+<p>　　1.所有基本数据类型（int,float,boolean,byte,double,char,long,short)<br>　　2.String类型<br>　　3.Class类型<br>　　4.enum类型<br>　　5.Annotation类型<br>　　6.以上所有类型的数组</p>
+<p>　　Annotation类型里面的参数该怎么设定:<br>　　第一,只能用public或默认(default)这两个访问权修饰.例如,String value();这里把方法设为defaul默认类型；　 　<br>　　第二,参数成员只能用基本类型byte,short,char,int,long,float,double,boolean八种基本数据类型和 String,Enum,Class,annotations等数据类型,以及这一些类型的数组.例如,String value();这里的参数成员就为String;　　<br>　　第三,如果只有一个参数成员,最好把参数名称设为”value”,后加小括号.例:下面的例子FruitName注解就只有一个参数成员。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="自定义注解使用过程"><a href="#自定义注解使用过程" class="headerlink" title="自定义注解使用过程"></a>自定义注解使用过程</h3><h4 id="定义注解——配置注解——解析注解"><a href="#定义注解——配置注解——解析注解" class="headerlink" title="定义注解——配置注解——解析注解"></a><strong>定义注解——配置注解——解析注解</strong></h4><p><strong>一、 定义注解</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(value = &#123;ElementType.METHOD&#125;)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> CherryAnnotation &#123;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 18</span>;</span><br><span class="line">    <span class="keyword">int</span>[] score();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>二、 配置注解</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="meta">@CherryAnnotation</span>(name = <span class="string">"Tim"</span>,age = <span class="number">12</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span><span class="params">(<span class="keyword">int</span> times)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; times; i++)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Good Good Study, Day Day Up!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>三、 解析注解</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAnnotation</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//获取Student的Class对象</span></span><br><span class="line">            Class stuClass = Class.forName(<span class="string">"pojos.Student"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//说明一下，这里形参不能写成Integer.class，应写为int.class</span></span><br><span class="line">            Method stuMethod = stuClass.getMethod(<span class="string">"study"</span>,<span class="keyword">int</span>.class);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(stuMethod.isAnnotationPresent(CherryAnnotation.class))&#123;</span><br><span class="line">                System.out.println(<span class="string">"Student类上配置了CherryAnnotation注解！"</span>);</span><br><span class="line">                <span class="comment">//获取该元素上指定类型的注解</span></span><br><span class="line">                CherryAnnotation cherryAnnotation = stuMethod.getAnnotation(CherryAnnotation.class);</span><br><span class="line">                System.out.println(<span class="string">"name: "</span> + cherryAnnotation.name() + <span class="string">", age: "</span> + cherryAnnotation.age()</span><br><span class="line">                    + <span class="string">", score: "</span> + cherryAnnotation.score()[<span class="number">0</span>]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"Student类上没有配置CherryAnnotation注解！"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchMethodException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p># </p>
+<h1 id="github-com"><a href="#github-com" class="headerlink" title="github.com"></a>github.com</h1><p>74.86.151.162 <a href="http://global-ssl.fastly.net" target="_blank" rel="noopener">http://global-ssl.fastly.net</a><br>13.229.188.59 <a href="http://github.com" target="_blank" rel="noopener">http://github.com</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">74.86.151.162 github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://timasura.github.io/2019/07/15/proint/" data-id="cjy9w8lhb0005lmwixld91o0t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/17/equals和==的区别/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/11/redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">redis</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA快捷键/">IDEA快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA-位运算/">JAVA 位运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-HashMap-扩容/">Java HashMap 扩容</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IDEA快捷键/" style="font-size: 10px;">IDEA快捷键</a> <a href="/tags/JAVA-位运算/" style="font-size: 10px;">JAVA 位运算</a> <a href="/tags/Java-HashMap-扩容/" style="font-size: 10px;">Java HashMap 扩容</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/19/studay1/">studay1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/19/IDEA/">IDEA</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/17/equals和==的区别/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/15/proint/">proint</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/11/redis/">redis</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Kelvin Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

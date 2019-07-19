@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>PageOne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="equals和==的区别== 比较的是变量(栈)内存中存放的对象的(堆)内存地址 equals用来比较的是两个对象的内容是否相等。如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，而Object中的equals方法返回的却是==的判断。 java.lang.Objectequals hashCode toString clone getClass fin wait notify S">
+<meta name="keywords" content="Java Open Book">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PageOne">
+<meta property="og:url" content="https://timasura.github.io/2019/07/17/equals和==的区别/index.html">
+<meta property="og:site_name" content="PageOne">
+<meta property="og:description" content="equals和==的区别== 比较的是变量(栈)内存中存放的对象的(堆)内存地址 equals用来比较的是两个对象的内容是否相等。如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，而Object中的equals方法返回的却是==的判断。 java.lang.Objectequals hashCode toString clone getClass fin wait notify S">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-18T01:33:10.767Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PageOne">
+<meta name="twitter:description" content="equals和==的区别== 比较的是变量(栈)内存中存放的对象的(堆)内存地址 equals用来比较的是两个对象的内容是否相等。如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，而Object中的equals方法返回的却是==的判断。 java.lang.Objectequals hashCode toString clone getClass fin wait notify S">
+  
+    <link rel="alternate" href="/atom.xml" title="PageOne" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">PageOne</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://timasura.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-equals和==的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/17/equals和==的区别/" class="article-date">
+  <time datetime="2019-07-17T03:31:16.169Z" itemprop="datePublished">2019-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="equals和-的区别"><a href="#equals和-的区别" class="headerlink" title="equals和==的区别"></a>equals和==的区别</h2><p><strong>== 比较的是变量(栈)内存中存放的对象的(堆)内存地址</strong></p>
+<p><strong>equals用来比较的是两个对象的内容是否相等。如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，而Object中的equals方法返回的却是==的判断。</strong></p>
+<h2 id="java-lang-Object"><a href="#java-lang-Object" class="headerlink" title="java.lang.Object"></a><strong>java.lang.Object</strong></h2><p>equals</p>
+<p>hashCode</p>
+<p>toString</p>
+<p>clone</p>
+<p>getClass</p>
+<p>fin</p>
+<p>wait</p>
+<p>notify</p>
+<h2 id="Static-用法"><a href="#Static-用法" class="headerlink" title="Static 用法"></a>Static 用法</h2><p>static修饰的方法、类变量叫做静态方法和静态变量，可以通过类名直接访问，被所有的对象所共享，初次加载时会被初始化。另外可以编写static代码块，静态导包</p>
+<h1 id="堆和栈的区别"><a href="#堆和栈的区别" class="headerlink" title="堆和栈的区别"></a>堆和栈的区别</h1><p>1、栈区：存放函数的参数值、局部变量、基本数据类型、对象的地址等，由编译器自动分配和释放，通常在函数执行完后就释放了，</p>
+<p>2、堆区：就是通过new、malloc、realloc分配的内存块，编译器不会负责它们的释放工作，需要用程序区释放。</p>
+<h2 id="类的加载机制"><a href="#类的加载机制" class="headerlink" title="类的加载机制"></a>类的加载机制</h2><h2 id="类的生命周期"><a href="#类的生命周期" class="headerlink" title="类的生命周期"></a>类的生命周期</h2><h2 id="自动拆装箱"><a href="#自动拆装箱" class="headerlink" title="自动拆装箱"></a>自动拆装箱</h2><p>装箱过程是通过调用包装器的valueOf方法实现的，而拆箱过程是通过调用包装器的 xxxValue方法实现的</p>
+<ol start="2">
+<li>int 和Integer在进行比较的时候，Integer会进行拆箱，转为int值与int进行比较。</li>
+<li>Integer与Integer比较的时候，由于直接赋值的时候会进行自动的装箱，那么这里就需要注意两个问题，一个是-128&lt;= x&lt;=127的整数，将会直接缓存在IntegerCache中，那么当赋值在这个区间的时候，不会创建新的Integer对象，而是从缓存中获取已经创建好的Integer对象。二：当大于这个范围的时候，直接new Integer来创建Integer对象。</li>
+<li>new Integer(1) 和Integer a = 1不同，前者会创建对象，存储在堆中，而后者因为在-128到127的范围内，不会创建新的对象，而是从IntegerCache中获取的。那么Integer a = 128, 大于该范围的话才会直接通过new Integer（128）创建对象，进行装箱。</li>
+</ol>
+<h2 id="索引的原理"><a href="#索引的原理" class="headerlink" title="索引的原理"></a>索引的原理</h2><p><strong>InnoDB存储引擎</strong></p>
+<p><strong>MyISAM存储引擎</strong></p>
+<p><strong>MEMORY存储引擎</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>功 能</strong></th>
+<th><strong>MYISAM</strong></th>
+<th><strong>Memory</strong></th>
+<th><strong>InnoDB</strong></th>
+<th><strong>Archive</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>存储限制</td>
+<td>256TB</td>
+<td>RAM</td>
+<td>64TB</td>
+<td>None</td>
+</tr>
+<tr>
+<td>支持事物</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持全文索引</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持数索引</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持哈希索引</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持数据缓存</td>
+<td>No</td>
+<td>N/A</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>支持外键</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody></table>
+<h3 id="聚簇索引和非聚簇索引"><a href="#聚簇索引和非聚簇索引" class="headerlink" title="聚簇索引和非聚簇索引"></a>聚簇索引和非聚簇索引</h3><ul>
+<li>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据  innodb</li>
+<li>非聚簇索引：将数据存储于索引分开结构，索引结构的叶子节点指向了数据的对应行 MYISAM</li>
+</ul>
+<h1 id="synchronized与Lock的区别"><a href="#synchronized与Lock的区别" class="headerlink" title="synchronized与Lock的区别"></a><a href="https://www.cnblogs.com/iyyy/p/7993788.html" target="_blank" rel="noopener">synchronized与Lock的区别</a></h1><p>两者区别：</p>
+<p>1.首先synchronized是java内置关键字，在jvm层面，Lock是个java类；</p>
+<p>2.synchronized无法判断是否获取锁的状态，Lock可以判断是否获取到锁；</p>
+<p>3.synchronized会自动释放锁(a 线程执行完同步代码会释放锁 ；b 线程执行过程中发生异常会释放锁)，Lock需在finally中手工释放锁（unlock()方法释放锁），否则容易造成线程死锁；</p>
+<p>4.用synchronized关键字的两个线程1和线程2，如果当前线程1获得锁，线程2线程等待。如果线程1阻塞，线程2则会一直等待下去，而Lock锁就不一定会等待下去，如果尝试获取不到锁，线程可以不用一直等待就结束了；</p>
+<p>5.synchronized的锁可重入、不可中断、非公平，而Lock锁可重入、可判断、可公平（两者皆可）</p>
+<p>6.Lock锁适合大量同步的代码的同步问题，synchronized锁适合代码少量的同步问题。</p>
+<p>1、Lock是java的一个interface接口，而synchronized是Java中的关键字，synchronized是由JDK实现的，不需要程序员编写代码去控制加锁和释放；Lock的接口如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public interface Lock &#123;</span><br><span class="line">    void lock();</span><br><span class="line">    void lockInterruptibly() throws InterruptedException;</span><br><span class="line">    boolean tryLock();</span><br><span class="line">    boolean tryLock(long time, TimeUnit unit) throws InterruptedException;</span><br><span class="line">    void unlock();</span><br><span class="line">    Condition newCondition();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　2、synchronized修饰的代码在执行异常时，jdk会自动释放线程占有的锁，不需要程序员去控制释放锁，因此不会导致死锁现象发生；但是，当Lock发生异常时，如果程序没有通过unLock()去释放锁，则很可能造成死锁现象，因此Lock一般都是在finally块中释放锁；格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Lock lock = new LockImpl; // new 一个Lock的实现类</span><br><span class="line">lock.lock();  // 加锁</span><br><span class="line">try&#123;</span><br><span class="line">    //todo</span><br><span class="line">&#125;catch(Exception ex)&#123;</span><br><span class="line">     // todo</span><br><span class="line">&#125;finally&#123;</span><br><span class="line">    lock.unlock();   //释放锁</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　3、Lock可以让等待锁的线程响应中断处理，如tryLock(long time, TimeUnit unit)，而synchronized却不行，使用synchronized时，等待的线程会一直等待下去，不能够中断，程序员无法控制；<br>　　4、通过Lock可以知道有没有成功获取锁，tryLock()方法返回boolean值，因此可知道是否获得了锁，而synchronized却无法办到。<br>　　5、Lock的实现类ReentrantReadWriteLock提供了readLock()和writeLock()用来获取读锁和写锁的两个方法，这样多个线程可以进行同时读操作。</p>
+<h2 id="总体来讲，当并发量较小，资源竞争不激烈时，两者的性能是差不多的；当大量线程同时竞争，资源非常有限时，此时Lock的性能要远远优于synchronized。"><a href="#总体来讲，当并发量较小，资源竞争不激烈时，两者的性能是差不多的；当大量线程同时竞争，资源非常有限时，此时Lock的性能要远远优于synchronized。" class="headerlink" title="　　总体来讲，当并发量较小，资源竞争不激烈时，两者的性能是差不多的；当大量线程同时竞争，资源非常有限时，此时Lock的性能要远远优于synchronized。 "></a>　　总体来讲，当并发量较小，资源竞争不激烈时，两者的性能是差不多的；当大量线程同时竞争，资源非常有限时，此时Lock的性能要远远优于synchronized。 </h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://timasura.github.io/2019/07/17/equals和==的区别/" data-id="cjy9w8lh50002lmwiydyuo4pm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/19/IDEA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          IDEA
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/15/proint/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">proint</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA快捷键/">IDEA快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA-位运算/">JAVA 位运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-HashMap-扩容/">Java HashMap 扩容</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IDEA快捷键/" style="font-size: 10px;">IDEA快捷键</a> <a href="/tags/JAVA-位运算/" style="font-size: 10px;">JAVA 位运算</a> <a href="/tags/Java-HashMap-扩容/" style="font-size: 10px;">Java HashMap 扩容</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/19/studay1/">studay1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/19/IDEA/">IDEA</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/17/equals和==的区别/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/15/proint/">proint</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/11/redis/">redis</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Kelvin Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
