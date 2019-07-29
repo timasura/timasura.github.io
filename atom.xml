@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://timasura.github.io/"/>
-  <updated>2019-07-19T08:50:47.503Z</updated>
+  <updated>2019-07-26T10:00:01.770Z</updated>
   <id>https://timasura.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sprstu_d1</title>
+    <link href="https://timasura.github.io/2019/07/21/sprstu-d1/"/>
+    <id>https://timasura.github.io/2019/07/21/sprstu-d1/</id>
+    <published>2019-07-21T03:49:55.000Z</published>
+    <updated>2019-07-26T10:00:01.770Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）"><a href="#一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）" class="headerlink" title="一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）"></a>一、XML的解析：解析XML文件，主要把<bean>解析成BeanDefinition放入容器（BeanDefinitionMap）</bean></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BeanFactory beanFactory = <span class="keyword">new</span> XmlBeanFactory(<span class="keyword">new</span> FileUrlResource(<span class="string">"bean.xml"</span>));</span><br></pre></td></tr></table></figure><ol><li><p>DefaultListableBeanFactory . Static{}</p><p>![image-20190721115442725](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721115442725.png)</p></li></ol><ol start="2"><li><p>FileUrlResource.FileUrlResource(String location) —&gt; UrlResource.UrlResource(String protocol, String location) — &gt; UrlResource.UrlResource(String protocol, String location, @Nullable String fragment)</p><p>![image-20190721140334280](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721140334280.png)</p></li><li><p>XmlBeanFactory.XmlBeanFactory(Resource resource, BeanFactory parentBeanFactory) — &gt; DefaultListableBeanFactory — &gt; AbstractAutowireCapableBeanFactory — &gt; AbstractBeanFactory</p><p>![image-20190721141245201](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721141245201.png)</p><p>——————</p><p>![image-20190721143641871](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721143641871.png)</p><p> XmlBeanDefinitionReader — &gt; EncodedResource </p><p>![image-20190721143258416](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721143258416.png)</p><p>![image-20190722094831084](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722094831084.png)</p><p>![image-20190722095709406](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722095709406.png)</p><p>![image-20190722100252500](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722100252500.png)</p><p>![image-20190722101552523](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722101552523.png)</p></li><li><p>默认表空间 DefaultBeanDefinitionDocumentReader.parseDefaultElement</p><p>![image-20190722135521906](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722135521906.png)</p><p>BeanDefinitionParserDelegate   委托类，用来辅助解析标签</p><p>![image-20190723092555027](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723092555027.png)</p><p>![image-20190723092645206](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723092645206.png)</p><p>![image-20190723092744700](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723092744700.png)</p><p>![image-20190723103410394](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723103410394.png)</p><p>![image-20190723103448781](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723103448781.png)</p><p><bean>标签解析完成得到 BeanDefinition 对象 ，开始注册bean</bean></p><p>![image-20190723105626613](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723105626613.png)</p><p>![image-20190723105708640](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723105708640.png)</p></li></ol><h2 id="二、Bean的加载"><a href="#二、Bean的加载" class="headerlink" title="二、Bean的加载"></a>二、Bean的加载</h2><p><img src="/Users/kelvin/Pictures/spring/getBean/doGetBean.jpg" alt="doGetBean"></p><ol><li><p><strong>尝试</strong>从<strong>缓存</strong>中加载单例</p><p>Spring 创建 bean 的原则是不等 bean 创建完成就会将创建 bean 的ObjectFactory 提早曝光也就是将ObjectFactory 加入到缓存中， 一旦下一个 bean 创建时要依赖上个 bean 则直接使用ObjectFactory直接尝试 缓存获取 或者 singletonFactories 中的 ObjectFactory 获取</p><p>![image-20190725172945311](/Users/kelvin/Library/Application Support/typora-user-images/image-20190725172945311.png)</p><p>![image-20190725173047506](/Users/kelvin/Library/Application Support/typora-user-images/image-20190725173047506.png)</p><p><img src="/Users/kelvin/Pictures/spring/getBean/DefaultSingletonBeanRegistryMap.jpg" alt="DefaultSingletonBeanRegistryMap"></p><p>![image-20190725173132693](/Users/kelvin/Library/Application Support/typora-user-images/image-20190725173132693.png)</p><p><img src="/Users/kelvin/Pictures/spring/getBean/getObjectForBeanInstance.jpg" alt="getObjectForBeanInstance"></p><p><img src="/Users/kelvin/Pictures/spring/getBean/getObjectFromFactoryBean.jpg" alt="getObjectFromFactoryBean"></p><p><img src="/Users/kelvin/Pictures/spring/getBean/doGetObjectFromFactoryBean.jpg" alt="doGetObjectFromFactoryBean"></p></li><li><p>获取单例</p></li></ol><p>问题：BeanFactory和FactoryBean的区别</p><p><strong>BeanFactory是IOC容器的核心接口，负责生产和管理bean的一个工厂。</strong>主要提供getBean、getBeanProvider、getType、isSingleton、isProtoType、containsBean、getAliases等接口，主要实现类有DefaultListableBeanFactory、XMLBeanFactory、ApplicationContext等实现类</p><p><strong>FactoryBean是一个工厂类接口，用户可以通过实现该接口来定制实例化 bean 的逻辑。</strong>它提供三个接口getObject（返回由 Factory Bean 创建的 bean 实例，并缓存单例实例）、getObjectType（bean 类型）、isSingleton，当FactoryBean调用 getBean (“xxx”) 时， Spring 通过反射机制发现 CarFactoryBean 实现了 FactoryBean接口，这时 Spring 容器就调用接口方法 CarFactoryBean#getObject（）方法返回 如果希望获取CarFactoryBean 的实例，则需要在使用 getBean(beanName)方法时在 beanName 前显示的加上”＆”前缀，例 getBean(“＆car”).</p><ol><li>q</li><li>Q::     scp power.zip monica</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li><li>q</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）&quot;&gt;&lt;a href=&quot;#一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>IDEA</title>

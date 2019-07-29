@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>sprstu_d1 | PageOne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）1BeanFactory beanFactory = new XmlBeanFactory(new FileUrlResource(&quot;bean.xml&quot;));   DefaultListableBeanFactory . Static{} ![image-201907211154">
+<meta name="keywords" content="Java Open Book">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sprstu_d1">
+<meta property="og:url" content="https://timasura.github.io/2019/07/21/sprstu-d1/index.html">
+<meta property="og:site_name" content="PageOne">
+<meta property="og:description" content="一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）1BeanFactory beanFactory = new XmlBeanFactory(new FileUrlResource(&quot;bean.xml&quot;));   DefaultListableBeanFactory . Static{} ![image-201907211154">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://timasura.github.io/Users/kelvin/Pictures/spring/getBean/doGetBean.jpg">
+<meta property="og:image" content="https://timasura.github.io/Users/kelvin/Pictures/spring/getBean/DefaultSingletonBeanRegistryMap.jpg">
+<meta property="og:image" content="https://timasura.github.io/Users/kelvin/Pictures/spring/getBean/getObjectForBeanInstance.jpg">
+<meta property="og:image" content="https://timasura.github.io/Users/kelvin/Pictures/spring/getBean/getObjectFromFactoryBean.jpg">
+<meta property="og:image" content="https://timasura.github.io/Users/kelvin/Pictures/spring/getBean/doGetObjectFromFactoryBean.jpg">
+<meta property="og:updated_time" content="2019-07-26T10:00:01.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sprstu_d1">
+<meta name="twitter:description" content="一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）1BeanFactory beanFactory = new XmlBeanFactory(new FileUrlResource(&quot;bean.xml&quot;));   DefaultListableBeanFactory . Static{} ![image-201907211154">
+<meta name="twitter:image" content="https://timasura.github.io/Users/kelvin/Pictures/spring/getBean/doGetBean.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="PageOne" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">PageOne</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://timasura.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-sprstu-d1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/21/sprstu-d1/" class="article-date">
+  <time datetime="2019-07-21T03:49:55.000Z" itemprop="datePublished">2019-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sprstu_d1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）"><a href="#一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）" class="headerlink" title="一、XML的解析：解析XML文件，主要把解析成BeanDefinition放入容器（BeanDefinitionMap）"></a>一、XML的解析：解析XML文件，主要把<bean>解析成BeanDefinition放入容器（BeanDefinitionMap）</bean></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BeanFactory beanFactory = <span class="keyword">new</span> XmlBeanFactory(<span class="keyword">new</span> FileUrlResource(<span class="string">"bean.xml"</span>));</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>DefaultListableBeanFactory . Static{}</p>
+<p>![image-20190721115442725](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721115442725.png)</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>FileUrlResource.FileUrlResource(String location) —&gt; UrlResource.UrlResource(String protocol, String location) — &gt; UrlResource.UrlResource(String protocol, String location, @Nullable String fragment)</p>
+<p>![image-20190721140334280](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721140334280.png)</p>
+</li>
+<li><p>XmlBeanFactory.XmlBeanFactory(Resource resource, BeanFactory parentBeanFactory) — &gt; DefaultListableBeanFactory — &gt; AbstractAutowireCapableBeanFactory — &gt; AbstractBeanFactory</p>
+<p>![image-20190721141245201](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721141245201.png)</p>
+<p>——————</p>
+<p>![image-20190721143641871](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721143641871.png)</p>
+<p> XmlBeanDefinitionReader — &gt; EncodedResource </p>
+<p>![image-20190721143258416](/Users/kelvin/Library/Application Support/typora-user-images/image-20190721143258416.png)</p>
+<p>![image-20190722094831084](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722094831084.png)</p>
+<p>![image-20190722095709406](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722095709406.png)</p>
+<p>![image-20190722100252500](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722100252500.png)</p>
+<p>![image-20190722101552523](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722101552523.png)</p>
+</li>
+<li><p>默认表空间 DefaultBeanDefinitionDocumentReader.parseDefaultElement</p>
+<p>![image-20190722135521906](/Users/kelvin/Library/Application Support/typora-user-images/image-20190722135521906.png)</p>
+<p>BeanDefinitionParserDelegate   委托类，用来辅助解析标签</p>
+<p>![image-20190723092555027](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723092555027.png)</p>
+<p>![image-20190723092645206](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723092645206.png)</p>
+<p>![image-20190723092744700](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723092744700.png)</p>
+<p>![image-20190723103410394](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723103410394.png)</p>
+<p>![image-20190723103448781](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723103448781.png)</p>
+<p><bean>标签解析完成得到 BeanDefinition 对象 ，开始注册bean</bean></p>
+<p>![image-20190723105626613](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723105626613.png)</p>
+<p>![image-20190723105708640](/Users/kelvin/Library/Application Support/typora-user-images/image-20190723105708640.png)</p>
+</li>
+</ol>
+<h2 id="二、Bean的加载"><a href="#二、Bean的加载" class="headerlink" title="二、Bean的加载"></a>二、Bean的加载</h2><p><img src="/Users/kelvin/Pictures/spring/getBean/doGetBean.jpg" alt="doGetBean"></p>
+<ol>
+<li><p><strong>尝试</strong>从<strong>缓存</strong>中加载单例</p>
+<p>Spring 创建 bean 的原则是不等 bean 创建完成就会将创建 bean 的ObjectFactory 提早曝光也就是将ObjectFactory 加入到缓存中， 一旦下一个 bean 创建时要依赖上个 bean 则直接使用ObjectFactory直接尝试 缓存获取 或者 singletonFactories 中的 ObjectFactory 获取</p>
+<p>![image-20190725172945311](/Users/kelvin/Library/Application Support/typora-user-images/image-20190725172945311.png)</p>
+<p>![image-20190725173047506](/Users/kelvin/Library/Application Support/typora-user-images/image-20190725173047506.png)</p>
+<p><img src="/Users/kelvin/Pictures/spring/getBean/DefaultSingletonBeanRegistryMap.jpg" alt="DefaultSingletonBeanRegistryMap"></p>
+<p>![image-20190725173132693](/Users/kelvin/Library/Application Support/typora-user-images/image-20190725173132693.png)</p>
+<p><img src="/Users/kelvin/Pictures/spring/getBean/getObjectForBeanInstance.jpg" alt="getObjectForBeanInstance"></p>
+<p><img src="/Users/kelvin/Pictures/spring/getBean/getObjectFromFactoryBean.jpg" alt="getObjectFromFactoryBean"></p>
+<p><img src="/Users/kelvin/Pictures/spring/getBean/doGetObjectFromFactoryBean.jpg" alt="doGetObjectFromFactoryBean"></p>
+</li>
+<li><p>获取单例</p>
+</li>
+</ol>
+<p>问题：BeanFactory和FactoryBean的区别</p>
+<p><strong>BeanFactory是IOC容器的核心接口，负责生产和管理bean的一个工厂。</strong>主要提供getBean、getBeanProvider、getType、isSingleton、isProtoType、containsBean、getAliases等接口，主要实现类有DefaultListableBeanFactory、XMLBeanFactory、ApplicationContext等实现类</p>
+<p><strong>FactoryBean是一个工厂类接口，用户可以通过实现该接口来定制实例化 bean 的逻辑。</strong>它提供三个接口getObject（返回由 Factory Bean 创建的 bean 实例，并缓存单例实例）、getObjectType（bean 类型）、isSingleton，当FactoryBean调用 getBean (“xxx”) 时， Spring 通过反射机制发现 CarFactoryBean 实现了 FactoryBean接口，这时 Spring 容器就调用接口方法 CarFactoryBean#getObject（）方法返回 如果希望获取CarFactoryBean 的实例，则需要在使用 getBean(beanName)方法时在 beanName 前显示的加上”＆”前缀，例 getBean(“＆car”).</p>
+<ol>
+<li>q</li>
+<li>Q::     scp power.zip monica</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+<li>q</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://timasura.github.io/2019/07/21/sprstu-d1/" data-id="cjyns1byl0009rpwinkdsl42t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/19/IDEA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">IDEA</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA快捷键/">IDEA快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA-位运算/">JAVA 位运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-HashMap-扩容/">Java HashMap 扩容</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IDEA快捷键/" style="font-size: 10px;">IDEA快捷键</a> <a href="/tags/JAVA-位运算/" style="font-size: 10px;">JAVA 位运算</a> <a href="/tags/Java-HashMap-扩容/" style="font-size: 10px;">Java HashMap 扩容</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/21/sprstu-d1/">sprstu_d1</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/19/IDEA/">IDEA</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/17/equals和==的区别/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/15/proint/">proint</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/11/redis/">redis</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Kelvin Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
